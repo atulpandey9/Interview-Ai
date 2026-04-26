@@ -13,7 +13,7 @@ const interviewReportSchema=z.object({
         intention: z.string().describe("The intention of interviewer behind asking this question"),
         answer: z.string().describe("How to answer this question, what points to cover, what approach to take etc.")
     })).describe("Technical questions that can be asked in the interview along with their intention and how to answer them"),
-    behavioralQuestions: z.array(z.object({
+    behavioralQuestions: z.array(z.object({ 
         question: z.string().describe("The technical question can be asked in the interview"),
         intention: z.string().describe("The intention of interviewer behind asking this question"),
         answer: z.string().describe("How to answer this question, what points to cover, what approach to take etc.")
@@ -41,7 +41,7 @@ const prompt=`Generate an interview report for a candidate with the following de
 
 const response=await ai.models.generateContent({
 
-    model:"gemini-3-flash-preview",
+   model:"gemini-2.5-flash",
     contents:prompt,
     config:{
         responseMimeType:"application/json",
@@ -51,4 +51,4 @@ const response=await ai.models.generateContent({
 return JSON.parse(response.text)
 }
 
-module.exports=generateInterviewReport;
+module.exports={generateInterviewReport};

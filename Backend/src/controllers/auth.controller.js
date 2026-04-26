@@ -63,7 +63,7 @@ async function loginUserController(req,res){
     }
 
 
-    const isPasswordValid=bcrypt.compare(password,user.password)
+    const isPasswordValid=await bcrypt.compare(password,user.password)
 
     if(!isPasswordValid) {
         return res.status(400).json({
@@ -84,7 +84,8 @@ async function loginUserController(req,res){
               id:user._id,
               username:user.username,
               email:user.email
-        }
+        },
+        token:token
     })
 }
 
