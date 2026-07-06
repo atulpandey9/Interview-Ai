@@ -5,20 +5,21 @@ import { useAuth } from "../hooks/useAuth";
 
 const Login = () => {
   const { loading, handleLogin } = useAuth();
-const navigate=useNavigate()
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
- await handleLogin({ email, password });
-    navigate('/')
+    setErrorMsg("");
+    try {
+      await handleLogin({ email, password });
+      navigate('/');
+    } catch (err) {
+      console.error("Login Failed", err);
+      setErrorMsg(err.response?.data?.message || "Invalid email or password.");
     }
-  catch(err){
-    console.log("Login Failed")
-  }
-   
   };
 
   if (loading) {
@@ -33,7 +34,7 @@ const navigate=useNavigate()
     <main>
       <div className="form-container">
         <h1>Login</h1>
-
+        {errorMsg && <p className="error-message" style={{ color: 'red', marginBottom: '1rem' }}>{errorMsg}</p>}
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="email">Email</label>
@@ -43,6 +44,7 @@ const navigate=useNavigate()
               id="email"
               name="email"
               placeholder="Enter Email Address"
+              required
             />
           </div>
 
@@ -54,6 +56,7 @@ const navigate=useNavigate()
               id="password"
               name="password"
               placeholder="Enter Password"
+              required
             />
           </div>
 
