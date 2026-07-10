@@ -85,7 +85,7 @@ Interview-AI
 Create a `.env` file inside the backend folder.
 
 ```env
-PORT=3000
+PORT=5000
 
 MONGODB_URI=YOUR_MONGODB_URI
 
