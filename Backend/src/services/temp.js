@@ -33,8 +33,19 @@ Fixed bugs and improved UI
 `
 
 const selfDiscription=`
-I am a hardworking and curious individual with a strong interest in technology and problem-solving. I enjoy learning new skills and applying them to real-world projects. I am a team player who communicates well and adapts quickly to new environments. My goal is to continuously improve myself and contribute positively to the organization I work for.
-`
+About the job
+Key Responsibilities:
+
+1. Design and develop efficient, high-quality code for backend systems
+2. Collaborate with cross-functional teams to optimize system architecture and integration
+3. Implement and maintain APIs to support frontend applications
+4. Conduct thorough testing and debugging to ensure seamless functionality
+5. Monitor and optimize system performance to meet business objectives
+6. Stay up-to-date with industry trends and best practices to continuously improve our technology stack
+7. Provide technical guidance and support to junior developers to foster a collaborative and innovative work environment
+Skill(s) required
+Node.js
+TypeScript`
 
 const jobDiscription=`
 Job Title: Junior Software Developer
