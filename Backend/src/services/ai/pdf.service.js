@@ -1,7 +1,13 @@
 const puppeteer = require("puppeteer");
 
 async function generatePdfFromHtml(htmlContent) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox"
+    ]
+});
  
   try {
     const page = await browser.newPage();
