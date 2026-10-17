@@ -15,6 +15,11 @@ ${jobDescription}
 
 Generate ONLY valid JSON.
 
+Hard rules:
+- Every string value must be a non-empty string (no "", no blank whitespace, no placeholder text).
+- Every array must contain at least one item.
+- "title" must be a short, specific job title taken from the Job Description below (e.g. "Junior Software Developer").
+
 Required JSON Structure:
 
 {
@@ -46,7 +51,7 @@ Required JSON Structure:
       "tasks": []
     }
   ],
-  "title": ""
+  "title": "Junior Software Developer"
 }
 
 Return only JSON.
