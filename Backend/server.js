@@ -1,7 +1,7 @@
 require('dotenv').config();
 const app = require("./src/app");
-const connectToDB = require("./src/config/database");
-const port= 5000 ;
+const connectToDB = require("./src/config/database.js");
+const port= 5000;
 connectToDB();
 
 app.get('/',(req,res)=>{
